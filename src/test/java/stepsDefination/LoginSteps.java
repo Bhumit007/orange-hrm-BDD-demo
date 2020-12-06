@@ -42,7 +42,16 @@ public class LoginSteps extends BasePage {
         try {
             loginPage.clickOnPIM().clickOnAddEmployee();
         } catch (Exception e) {
-            System.out.println("Username not sent.");
+            System.out.println("Username not navigate to add employee tab.");
+        }
+    }
+
+    @And("I enter employee details and save it.")
+    public void iEnterEmployeeDetailsAndSaveIt() {
+        try {
+            loginPage.enterFirstNameAndLastName().fileUpload().checkBoxCreateLoginDetail().enterLoginDetail().verifySuccessMessage().verifySuccessMessageForAdd();
+        } catch (Exception e) {
+            System.out.println("Username not navigate to add employee tab.");
         }
     }
 }
